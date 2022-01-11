@@ -12,13 +12,17 @@ const getWeather = (latitude, longitude, callback) => {
                 callback(`Requisition error: ${body.error.info}`, undefined)
         } else {
             const current = body.current
-            callback(undefined, 'The currently weather is ' +
+            callback(undefined, {forecastData: 'The currently weather is ' +
                 current.weather_descriptions[0] +
                 '. The temperature is ' +
                 current.temperature +
                 ' and it feels like ' +
                 current.feelslike +
-                '.' )
+                '.' +
+                ' The curret humidity is ' +
+                current.humidity + 
+                '.',
+                weatherIconUrl: current.weather_icons}) 
         } 
     })
 }

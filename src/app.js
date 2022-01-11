@@ -37,7 +37,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help page',
-        message: 'Help message.',
+        message: 'Just imagine there is a Help message here. A very good one.',
         authorName: 'Jonathan'
     })
 })
@@ -68,7 +68,8 @@ app.get('/weather', (req, res) => {
                 addressProvided: req.query.address,
                 addressReturned: placeName,
                 date: new Date(),
-                forecast: weatherData
+                forecast: weatherData.forecastData,
+                iconUrl: weatherData.weatherIconUrl
             })
         })
     })
