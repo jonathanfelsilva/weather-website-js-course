@@ -8,11 +8,11 @@ const geocode = (location, callback) => {
     request({ url, json: true }, (error, { body } = {}) => {
 
         if (error) {
-            callback('Não foi possível se conectar ao serviço de coordenadas!', undefined)
+            callback('Unable to connect to the weather service.', undefined)
         } else if (body.message) {
-            callback(`Erro na requisição: ${body.message}`, undefined)
+            callback(`Error: ${body.message}`, undefined)
         } else if (body.features !== undefined && body.features.length === 0) {
-            callback('Erro na requisição: local não encontrado.', undefined)
+            callback('Error: place not found.', undefined)
         } else {
             let latitude = body.features[0].center[1]
             let longitude = body.features[0].center[0]

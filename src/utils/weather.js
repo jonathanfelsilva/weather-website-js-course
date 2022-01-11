@@ -7,9 +7,9 @@ const getWeather = (latitude, longitude, callback) => {
 
     request({url, json: true}, (error, { body } = {}) => {
         if (error) {
-            callback('Não foi possível se conectar ao serviço de clima!', undefined)
+            callback('Unable to connect to the weather service.', undefined)
         } else if (body.error) {
-                callback(`Erro na requisição: ${body.error.info}`, undefined)
+                callback(`Requisition error: ${body.error.info}`, undefined)
         } else {
             const current = body.current
             callback(undefined, 'The currently weather is ' +
