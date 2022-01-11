@@ -1,5 +1,3 @@
-console.log("Message.")
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const resultMessage = document.querySelector('#result-message')
