@@ -19,7 +19,7 @@ const getWeather = (latitude, longitude, callback) => {
                 ' and it feels like ' +
                 current.feelslike +
                 '.' +
-                ' The curret humidity is ' +
+                ' The current humidity is ' +
                 current.humidity + 
                 '.',
                 weatherIconUrl: current.weather_icons}) 
